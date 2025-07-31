@@ -1,39 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fatima Ahsan | Portfolio</title>
   <style>
-    body { font-family: Arial; margin: 40px; background: #f9f9f9; color: #333; }
-    h1 { color: #2c3e50; }
-    p { font-size: 18px; line-height: 1.6; }
-    .projects { margin-top: 20px; }
-    .project { margin-bottom: 15px; }
-    a { text-decoration: none; color: #0073e6; font-size: 18px; }
-    a:hover { color: #005bb5; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7f9;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+    .skills, .projects, .contact {
+      margin-top: 20px;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skills-list span {
+      background: #3498db;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .project {
+      margin-bottom: 15px;
+    }
+    .btn {
+      display: inline-block;
+      background: #3498db;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #217dbb;
+    }
+    .contact a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <h1>Hello, I'm Fatima Ahsan</h1>
-  <p>I am passionate about Machine Learning, Data Science, and Healthcare innovation. I build intelligent solutions to improve lives and explore AI for real-world impact.</p>
-  
-  <h2>My Projects</h2>
-  <div class="projects">
+
+  <header>
+    <h1>Fatima Ahsan</h1>
+    <p>Machine Learning | Data Science | Healthcare Innovation</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I am passionate about leveraging Machine Learning and Data Science to develop intelligent solutions for real-world problems, especially in healthcare. My focus is on creating impactful, data-driven technologies that improve lives.</p>
+  </section>
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span>Python</span>
+      <span>Pandas</span>
+      <span>NumPy</span>
+      <span>Scikit-learn</span>
+      <span>TensorFlow</span>
+      <span>Machine Learning</span>
+      <span>Data Visualization</span>
+      <span>Healthcare AI</span>
+    </div>
+  </section>
+
+  <section class="projects">
+    <h2>Projects</h2>
     <div class="project">
-      <a href="https://github.com/fatimaahsan10/Low-Vision-Audio-Reader" target="_blank">
+      <a class="btn" href="https://github.com/fatimaahsan10/Low-Vision-Audio-Reader" target="_blank">
         Low Vision Audio Reader
       </a>
     </div>
     <div class="project">
-      <a href="https://github.com/fatimaahsan10/Color-Blind-Friendly-Image-Converter" target="_blank">
+      <a class="btn" href="https://github.com/fatimaahsan10/Color-Blind-Friendly-Image-Converter" target="_blank">
         Color Blind Friendly Image Converter
       </a>
     </div>
     <div class="project">
-      <a href="https://github.com/fatimaahsan10/Brain.tumour.detection" target="_blank">
+      <a class="btn" href="https://github.com/fatimaahsan10/Brain.tumour.detection" target="_blank">
         Brain Tumor Detection
       </a>
     </div>
-  </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:fatimaahsan1002@gmail.com">fatimaahsan1002@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/fatima-ahsan-8ab9b7281" target="_blank">View Profile</a></p>
+  </section>
+
 </body>
 </html>
+
 
