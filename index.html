@@ -8,42 +8,32 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
+    /* Dark Mode Default */
     body {
       font-family: 'Poppins', sans-serif;
-      color: #333;
-      background: 
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('https://cdn.pixabay.com/photo/2022/02/17/15/03/ai-7019236_1280.jpg') no-repeat center center/cover;
-      background-attachment: fixed;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    /* Dark Mode */
-    body.dark {
       background: #121212;
       color: #f4f4f4;
-    }
-    body.dark section {
-      background: #1f1f1f;
-      color: #f4f4f4;
-    }
-    body.dark nav {
-      background: rgba(30, 30, 30, 0.9);
+      background-image: url('https://cdn.pixabay.com/photo/2022/02/17/15/03/ai-7019236_1280.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
     }
 
-    /* Navigation */
     nav {
-      position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center;
-      background: rgba(255, 255, 255, 0.9); padding: 15px 20px; font-weight: bold;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000;
+      position: sticky; top: 0;
+      display: flex; justify-content: center; gap: 20px;
+      background: rgba(30, 30, 30, 0.95);
+      padding: 15px; font-weight: bold;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
     }
     nav a {
-      text-decoration: none; color: #3498db; margin: 0 10px; transition: color 0.3s;
+      text-decoration: none;
+      color: #3498db;
+      transition: color 0.3s;
     }
-    nav a:hover { color: #217dbb; }
-    .toggle-btn {
-      cursor: pointer; background: #3498db; color: white; border: none; padding: 8px 12px; border-radius: 5px;
-    }
+    nav a:hover { color: #5dade2; }
 
     /* Hero Section */
     #hero { text-align: center; padding: 120px 20px 60px; color: white; }
@@ -51,8 +41,10 @@
     #hero p { font-size: 1.4rem; margin-top: 15px; min-height: 30px; }
     .hero-buttons { margin-top: 20px; }
     .btn {
-      display: inline-block; background: #3498db; color: #fff; padding: 12px 18px; text-decoration: none;
-      border-radius: 6px; font-weight: bold; margin: 10px; transition: all 0.3s ease;
+      display: inline-block; background: #3498db; color: #fff;
+      padding: 12px 18px; text-decoration: none;
+      border-radius: 6px; font-weight: bold;
+      margin: 10px; transition: all 0.3s ease;
     }
     .btn:hover { background: #217dbb; transform: scale(1.05); }
 
@@ -61,10 +53,10 @@
     /* Sections */
     section {
       max-width: 900px; margin: 50px auto; padding: 25px;
-      background: rgba(255, 255, 255, 0.95); border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1); animation: fadeIn 1s ease-in-out;
+      background: rgba(31, 31, 31, 0.95); border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4); animation: fadeIn 1s ease-in-out;
     }
-    h2 { color: #2c3e50; margin-bottom: 15px; border-left: 5px solid #3498db; padding-left: 10px; }
+    h2 { color: #5dade2; margin-bottom: 15px; border-left: 5px solid #3498db; padding-left: 10px; }
     p { font-size: 18px; line-height: 1.6; }
 
     .skills-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
@@ -75,15 +67,14 @@
     .skills-list span:hover { transform: scale(1.1); }
 
     .project { margin-bottom: 15px; }
-
-    .contact a { color: #3498db; font-weight: bold; }
+    .contact a { color: #5dade2; font-weight: bold; }
 
     /* Back to Top Button */
     #backToTop {
       position: fixed; bottom: 20px; right: 20px;
       background: #3498db; color: #fff; border: none;
       padding: 12px; border-radius: 50%; font-size: 20px;
-      cursor: pointer; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
     #backToTop:hover { background: #217dbb; }
 
@@ -101,33 +92,29 @@
 
   <!-- Navigation -->
   <nav>
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <button class="toggle-btn" id="darkModeToggle">Dark Mode</button>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Hero Banner -->
+  <!-- Hero Section -->
   <section id="hero">
     <h1>Fatima Ahsan</h1>
     <p id="tagline">Building AI & Healthcare Solutions</p>
     <div class="hero-buttons">
-      <a href="resume.pdf" class="btn" target="_blank">Download Resume</a>
       <a href="#projects" class="btn">View My Projects</a>
     </div>
     <a href="#about" class="scroll-down">&#8595;</a>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
     <p>I am passionate about using Artificial Intelligence and Machine Learning to create solutions that make healthcare more efficient and accessible. My goal is to bridge technology and healthcare for impactful innovations.</p>
   </section>
 
-  <!-- Skills Section -->
+  <!-- Skills -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills-list">
@@ -140,7 +127,7 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="project"><a class="btn" href="https://github.com/fatimaahsan10/Low-Vision-Audio-Reader" target="_blank">Low Vision Audio Reader</a></div>
@@ -148,19 +135,19 @@
     <div class="project"><a class="btn" href="https://github.com/fatimaahsan10/BTD" target="_blank">Brain Tumor Detection</a></div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:fatimaahsan1002@gmail.com">fatimaahsan1002@gmail.com</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/fatima-ahsan-8ab9b7281" target="_blank">View Profile</a></p>
   </section>
 
-  <!-- Back to Top Button -->
+  <!-- Back to Top -->
   <button id="backToTop">&#8679;</button>
 
   <!-- JavaScript -->
   <script>
-    // Tagline Animation
+    // Typing Animation
     const phrases = [
       "Building AI Solutions for Healthcare",
       "Innovating with Machine Learning",
@@ -176,21 +163,10 @@
     // Back to Top Button
     const backToTop = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTop.style.display = "block";
-      } else {
-        backToTop.style.display = "none";
-      }
+      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
     });
     backToTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Dark Mode Toggle
-    const darkToggle = document.getElementById("darkModeToggle");
-    darkToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      darkToggle.textContent = document.body.classList.contains("dark") ? "Light Mode" : "Dark Mode";
     });
   </script>
 
