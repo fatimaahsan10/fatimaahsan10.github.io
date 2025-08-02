@@ -52,14 +52,14 @@
       display: inline-block; background: #3498db; color: #fff;
       padding: 12px 18px; text-decoration: none;
       border-radius: 6px; font-weight: bold;
-      margin: 10px; transition: all 0.3s ease;
+      margin: 8px; transition: all 0.3s ease;
     }
     .btn:hover { background: #217dbb; transform: scale(1.05); }
     .scroll-down { margin-top: 40px; font-size: 2.5rem; color: white; animation: bounce 2s infinite; display: inline-block; }
 
     /* Sections */
     section {
-      max-width: 900px; margin: 50px auto; padding: 25px;
+      max-width: 1100px; margin: 50px auto; padding: 25px;
       background: rgba(31, 31, 31, 0.95); border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4); animation: fadeIn 1s ease-in-out;
     }
@@ -73,21 +73,58 @@
     }
     .skills-list span:hover { transform: scale(1.1); }
 
-    /* Projects Section */
-    .project {
-      margin-bottom: 25px;
-      text-align: center;
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
-    .project h3 {
+    .project-card {
+      position: relative;
+      background: #1f1f1f;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover { transform: translateY(-5px); }
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .project-card:hover .project-img { transform: scale(1.05); }
+
+    /* Overlay effect */
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      font-size: 14px;
+      padding: 8px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .project-card:hover .overlay {
+      opacity: 1;
+    }
+
+    .project-content {
+      padding: 15px;
+    }
+    .project-content h3 {
       margin-bottom: 10px;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       color: #f4f4f4;
     }
-    .project .btn {
-      margin: 6px;
-    }
     .huggingface-icon {
-      width: 20px;
+      width: 18px;
       vertical-align: middle;
       margin-right: 6px;
     }
@@ -123,7 +160,6 @@
 
   <!-- Hero Section -->
   <section id="hero">
-    <!-- Profile Photo -->
     <img src="profile.jpg" alt="Fatima Ahsan" class="profile-photo">
     <h1>Fatima Ahsan</h1>
     <p id="tagline">Building AI & Healthcare Solutions</p>
@@ -152,32 +188,49 @@
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects with Screenshots -->
   <section id="projects">
     <h2>Projects</h2>
+    <div class="projects-grid">
+      
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="low-vision.jpg" alt="Low Vision Audio Reader" class="project-img">
+        <div class="overlay">AI app that converts text into audio for visually impaired users.</div>
+        <div class="project-content">
+          <h3>Low Vision Audio Reader</h3>
+          <a class="btn" href="https://github.com/fatimaahsan10/Low-Vision-Audio-Reader" target="_blank">View Code</a>
+          <a class="btn" href="https://huggingface.co/spaces/fatimaahsan/Low-VisionAudioReader" target="_blank">
+            <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" class="huggingface-icon" alt="Hugging Face"> Live Demo
+          </a>
+        </div>
+      </div>
 
-    <div class="project">
-      <h3>Low Vision Audio Reader</h3>
-      <a class="btn" href="https://github.com/fatimaahsan10/Low-Vision-Audio-Reader" target="_blank">View Code</a>
-      <a class="btn" href="https://huggingface.co/spaces/fatimaahsan/Low-VisionAudioReader" target="_blank">
-        <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" class="huggingface-icon" alt="Hugging Face"> Live Demo
-      </a>
-    </div>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="color-blind.jpg" alt="Color Blind Friendly Converter" class="project-img">
+        <div class="overlay">Tool to make images color-blind friendly using AI techniques.</div>
+        <div class="project-content">
+          <h3>Color Blind Friendly Converter</h3>
+          <a class="btn" href="https://github.com/fatimaahsan10/Color-Blind-Friendly-Image-Converter" target="_blank">View Code</a>
+          <a class="btn" href="https://huggingface.co/spaces/fatimaahsan/Color-BlindFriendlyImageConverter" target="_blank">
+            <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" class="huggingface-icon" alt="Hugging Face"> Live Demo
+          </a>
+        </div>
+      </div>
 
-    <div class="project">
-      <h3>Color Blind Friendly Image Converter</h3>
-      <a class="btn" href="https://github.com/fatimaahsan10/Color-Blind-Friendly-Image-Converter" target="_blank">View Code</a>
-      <a class="btn" href="https://huggingface.co/spaces/fatimaahsan/Color-BlindFriendlyImageConverter" target="_blank">
-        <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" class="huggingface-icon" alt="Hugging Face"> Live Demo
-      </a>
-    </div>
-
-    <div class="project">
-      <h3>Brain Tumor Detection</h3>
-      <a class="btn" href="https://github.com/fatimaahsan10/BTD" target="_blank">View Code</a>
-      <a class="btn" href="https://huggingface.co/spaces/fatimaahsan/Brain_tumour_detection_app" target="_blank">
-        <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" class="huggingface-icon" alt="Hugging Face"> Live Demo
-      </a>
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="brain-tumor.jpg" alt="Brain Tumor Detection" class="project-img">
+        <div class="overlay">Deep learning app to detect brain tumors from MRI scans.</div>
+        <div class="project-content">
+          <h3>Brain Tumor Detection</h3>
+          <a class="btn" href="https://github.com/fatimaahsan10/BTD" target="_blank">View Code</a>
+          <a class="btn" href="https://huggingface.co/spaces/fatimaahsan/Brain_tumour_detection_app" target="_blank">
+            <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" class="huggingface-icon" alt="Hugging Face"> Live Demo
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -216,4 +269,3 @@
 
 </body>
 </html>
-
